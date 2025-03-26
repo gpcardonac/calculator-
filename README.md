@@ -54,16 +54,6 @@ src/
         ├── CalculatorControllerTest.java
         └── CalculatorIntegrationTest.java
 ```
-
----
-
-## 📸 Capturas recomendadas
-
-- Creación del proyecto en Spring Initializr
-- Código fuente del controlador y pruebas
-- Ejecución de pruebas en terminal
-- Push exitoso a GitHub
-
 ---
 
 ## 🔗 Repositorio
