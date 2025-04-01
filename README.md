@@ -43,10 +43,10 @@ Las pruebas pueden ejecutarse con:
 ---
 ### Pruebas Unitarias
 
-![Pruebas Unitarias](evidencias/test_unitarios.jpeg)
+![Pruebas Unitarias](evidencias/test_unitarios.jpg)
 ### Pruebas de Integración
-![Pruebas de Integración](evidencias/TestIntegration_01.jpeg)
-![Pruebas de Integración](evidencias/TestIntegration_02.jpeg)
+![Pruebas de Integración](evidencias/TestIntegration_01.jpg)
+![Pruebas de Integración](evidencias/TestIntegration_02.jpg)
 
 
 
