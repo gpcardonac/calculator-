@@ -41,6 +41,14 @@ Las pruebas pueden ejecutarse con:
 ```
 
 ---
+### Pruebas Unitarias
+
+![Pruebas Unitarias](evidencias/test_unitarios.jpeg)
+### Pruebas de Integración
+![Pruebas de Integración](evidencias/TestIntegration_01.jpeg)
+![Pruebas de Integración](evidencias/TestIntegration_02.jpeg)
+
+
 
 ## 📂 Estructura del proyecto
 
@@ -54,6 +62,9 @@ src/
         └── CalculatorIntegrationTest.java
 ```
 ---
+
+### GitHub Actions funcionando
+![CI en GitHub Actions](evidencias/pipeline.jpeg)
 
 ## 🔗 Repositorio
 
