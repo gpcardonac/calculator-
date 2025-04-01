@@ -1,25 +1,41 @@
 package com.example.calculator.controller;
+import org.springframework.boot.test.web.server.LocalServerPort;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
-@AutoConfigureMockMvc
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CalculatorIntegrationTest {
 
+    @LocalServerPort
+    private int port;
+
     @Autowired
-    private MockMvc mockMvc;
+    private TestRestTemplate restTemplate;
 
     @Test
-    void testSumEndpoint() throws Exception {
-        mockMvc.perform(get("/calculator/sum?a=2&b=3"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("5"));
+    void testSumEndpointWithPositiveNumbers() {
+        String url = "http://localhost:" + port + "/calculator/sum?a=5&b=3";
+        Integer result = restTemplate.getForObject(url, Integer.class);
+        assertEquals(8, result);
+    }
+
+    @Test
+    void testSumEndpointWithZero() {
+        String url = "http://localhost:" + port + "/calculator/sum?a=5&b=0";
+        Integer result = restTemplate.getForObject(url, Integer.class);
+        assertEquals(5, result);
+    }
+
+    @Test
+    void testSumEndpointWithNegativeNumbers() {
+        String url = "http://localhost:" + port + "/calculator/sum?a=-2&b=-3";
+        Integer result = restTemplate.getForObject(url, Integer.class);
+        assertEquals(-5, result);
     }
 }

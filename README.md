@@ -1,11 +1,10 @@
-
 # Proyecto Calculadora - Spring Boot
 
-Este es un proyecto sencillo desarrollado en Spring Boot como parte de la evaluación sobre Automatización de Pruebas y Configuración del Entorno.
+#Este es un proyecto  desarrollado en Spring Boot como parte de la evaluación sobre Automatización de Pruebas y Configuración del Entorno.
 
 ## 📌 Descripción
 
-La aplicación expone un endpoint REST que permite sumar dos números enteros mediante parámetros `a` y `b`.
+#La aplicación expone un endpoint REST que permite sumar dos números enteros mediante parámetros `a` y `b`.
 
 **Endpoint:**  
 ```
