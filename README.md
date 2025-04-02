@@ -44,9 +44,28 @@ Las pruebas pueden ejecutarse con:
 ### Pruebas Unitarias
 
 ![Pruebas Unitarias](evidencias/test_unitarios.jpg)
+
+Método probado	Descripción	Resultado esperado
+sumar(5, 3)	Suma de dos números positivos	8
+sumar(5, 0)	Suma de un número con cero	5
+sumar(-2, -3)	Suma de dos números negativos	-5
+Estas pruebas son ejecutadas automáticamente por el pipeline de GitHub Actions al realizar cualquier push a la rama main, gracias a la configuración incluida en el archivo test.yml.
+
+
 ### Pruebas de Integración
 ![Pruebas de Integración](evidencias/TestIntegration_01.jpg)
 ![Pruebas de Integración](evidencias/TestIntegration_02.jpg)
+
+Se implementaron tres pruebas unitarias usando Mockito en el archivo CalculatorServiceTest.java, simulando el comportamiento del servicio:
+
+Se implementaron tres pruebas de integración en el archivo CalculatorIntegrationTest.java, verificando el correcto funcionamiento del endpoint /calculator/sum a través de solicitudes reales usando TestRestTemplate.
+
+Endpoint llamado	Descripción de la prueba	Resultado esperado
+GET /calculator/sum?a=5&b=3	Suma de dos números positivos	8
+GET /calculator/sum?a=5&b=0	Suma de un número y cero	5
+GET /calculator/sum?a=-2&b=-3	Suma de dos números negativos	-5
+Estas pruebas permiten validar el comportamiento de la API como si fueran peticiones externas reales, asegurando que la integración entre el controlador y el servicio funciona correctamente.
+También son ejecutadas automáticamente en el pipeline de GitHub Actions.
 
 
 
